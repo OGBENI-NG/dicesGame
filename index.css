@@ -1,0 +1,102 @@
+html, body { 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 50px;
+    background-image: linear-gradient(135deg, #034078 , #772e25);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    color: black;
+}
+
+h1 {
+    color: #38a3a5
+}
+
+.container {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #2b2d42;
+    box-shadow: -2px 6px 18px 3px rgba(0,0,0,0.75);
+    padding: 50px;
+    color: #ff8b94;
+    border-radius: 15px;
+}
+
+.players {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dice {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 80px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.dices-images {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+
+button {
+    color: #fff;
+    padding: 20px 30px;
+    font-size: 20px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#rollBtn {
+    background-color: #1a759f;
+}
+
+#resetBtn {
+    background-color: #168aad;
+}
+
+button:focus {
+    outline: none;
+}
+
+#resetBtn {
+    display: none;
+}
+
+.active {
+    box-shadow: -2px 0px 18px #38a3a5;
+}
+
+.wins {
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+    background: linear-gradient(to right, #fa709a, #fee140);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes example {
+  0%   {left:0px; top:0px;}
+  25%  {left:50px; top:0px;}
+  50%  {left:50px; top:40px;}
+  75%  {left:0px; top:40px;}
+  100% {left:0px; top:0px;}
+}
