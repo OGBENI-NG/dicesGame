@@ -58,6 +58,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0px 0px 8px #fdfcdc;
 }
 
 
@@ -66,11 +67,15 @@ button {
 }
 
 #resetBtn {
-    background-color: #168aad;
+    background-color: #6f1d1b;
 }
 
 button:focus {
     outline: none;
+}
+
+#toss-btn {
+    background-color: #00a896;
 }
 
 #resetBtn {
@@ -85,7 +90,7 @@ button:focus {
     font-weight: 900;
     text-align: center;
     position: relative;
-    animation-name: example;
+    animation-name: display;
     animation-duration: 4s;
     animation-iteration-count: 3;
     background: linear-gradient(to right, #fa709a, #fee140);
@@ -93,7 +98,7 @@ button:focus {
     -webkit-text-fill-color: transparent;
 }
 
-@keyframes example {
+@keyframes display {
   0%   {left:0px; top:0px;}
   25%  {left:50px; top:0px;}
   50%  {left:50px; top:40px;}

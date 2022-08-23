@@ -1,8 +1,8 @@
 // Create variables for the game state
 let player1Score = 0
 let player2Score = 0
-let players = [player1Score, player2Score]
 let player1Turn = true
+let coin = [true, false]
 
 // Create variables to store references to the necessary DOM nodes
 const player1Dice = document.getElementById("player1Dice")
@@ -12,15 +12,34 @@ const player2Scoreboard = document.getElementById("player2Scoreboard")
 const message = document.getElementById("message")
 const rollBtn = document.getElementById("rollBtn")
 const resetBtn = document.getElementById("resetBtn")
+const tossBtn = document.getElementById("toss-btn")
 const dicesArr = ["", "dices1.png", "dices2.png", "dices3.png", "dices4.png", "dices5.png", "dices6.png"]
 
 
+tossBtn.addEventListener("click", () => {
+    tossForPlayer()
+})
+
+function tossForPlayer(){
+    let playerTurn = Math.floor(Math.random() * coin.length)
+    player1Turn = coin[playerTurn]
+    if (player1Turn) {
+        message.textContent = "Player One Roll Dices"
+        player1Dice.classList.add("active")
+    } else {
+        message.textContent = "Player Two Roll Dices"
+        player1Dice.classList.remove("active")
+        player2Dice.classList.add("active")
+    } 
+    
+    rollBtn.style.display = "block"
+    tossBtn.style.display = "none"
+}
 
 
 function showResetButton() {
     rollBtn.style.display = "none"
     resetBtn.style.display = "block"
-    
 }
 
 /* Hook up a click event listener to the Roll Dice Button. */
@@ -69,9 +88,9 @@ function reset() {
     player2Scoreboard.textContent = 0
     player1Dice.textContent = "-"
     player2Dice.textContent = "-"
-    message.textContent = "Player 1 Turn"
+    message.textContent = "Let Start Game"
     resetBtn.style.display = "none"
-    rollBtn.style.display = "block"
+    tossBtn.style.display = "block"
     player2Dice.classList.remove("active")
     player1Dice.classList.add("active")
     message.classList.remove("wins")
